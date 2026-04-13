@@ -12,3 +12,19 @@ export function ask(question: string): Promise<string> {
         resolve(answer);
     }));
 }
+
+export async function askNoSpaces(question: string) {
+    let input: string
+    let inputIsCorrect = false;
+
+    do {
+        input = await ask(question);
+        input.trim();
+        if (input.includes(" ")) {
+            console.log("Invalid Input: Input contains non-trailing/leading ' ' characters.");
+            continue;
+        }
+    } while (inputIsCorrect);
+
+    return input;
+}
