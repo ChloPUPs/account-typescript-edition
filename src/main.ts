@@ -1,10 +1,3 @@
-import readline from "node:readline"
+import { ask } from "./utils.js";
 
-let rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-rl.question("Do you exist?: ", (answer: string) => {
-    console.log(`You said: ${answer}`);
-});
+let answer = ask("Speak");
