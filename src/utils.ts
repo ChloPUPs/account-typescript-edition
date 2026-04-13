@@ -1,15 +1,14 @@
-import readline from "node:readline"
+import readline from "node:readline";
 
-export function ask(question: string): string | undefined {
+export function ask(question: string): Promise<string> {
     let rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout,
     });
 
-    rl.question(`${question}: `, answer => {
-        console.log("wow! you said:", answer);
+    // Get Input. Looks complicated because of how js works
+    return new Promise<string>(resolve => rl.question(`${question}: `, answer => {
         rl.close();
-        return answer;
-    });
-    return;
+        resolve(answer);
+    }));
 }
