@@ -30,7 +30,7 @@ export async function promptLoggedIn(account: Account) {
                 account.post(postInput);
                 break;
             case "3": // Log Out
-                console.log("Goodbye! Logging off...");
+                console.log("Goodbye! Logging out...");
                 account.loggedIn = false;
                 break;
             default: // Invalid Input
