@@ -1,5 +1,12 @@
-import { ask } from "./utils.js";
+/*
 
-let res: string = await ask("Speak");
+-----Account Program-----
+A CLI where you log into a fake account (TypeScript this time)
 
-console.log("You said:", res);
+*/
+
+import * as userInterface from "./account/user_interface.js";
+
+userInterface.printTitle();
+let account = await userInterface.promptInfo();
+userInterface.promptLoggedIn(account);
