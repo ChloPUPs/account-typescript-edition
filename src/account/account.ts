@@ -32,7 +32,9 @@ class Account {
     }
 
     post(message: string) {
-        console.log(`Created new post!!\n${this.#userName}: ${message}`);
+        let date = new Date();
+        let timeStr = date.toLocaleString();
+        console.log(`Created new post!!\n[${timeStr}] ${this.#userName}: ${message}`);
     }
 }
 
